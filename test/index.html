@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-US">
+<head>
+    <meta charset="utf-8">
+    <title>GTM-Storage - testpage</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Google Tag Manager -->
+    <!-- replacing GTM-XXXX with your container ID -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-XXXX');</script>
+    <!-- End Google Tag Manager -->
+    
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+    <script src="../src/gtmstorage.js"></script>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<!-- replacing GTM-XXXX with your container ID -->
+<!--<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXX"-->
+                  <!--height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>-->
+<!-- End Google Tag Manager (noscript) -->
+
+<header class="banner">
+    <nav class="navbar navbar-static-top navbar-inverse">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-navbar-collapse" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">GTM-Storage <small>/testpage</small></a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="index.html">Homepage</a></li>
+                    <li><a href="https://github.com/cichy380/GTM-Storage">GTM-Storage on Github</a></li>
+                    <li><a href="mailto:marcin.dobroszek@gmail.com">Email me</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<div class="wrap container" role="document">
+    <div class="content row">
+        <main class="main col-sm-12">
+            <section class="content-section">
+                <div class="row">
+                    <div class="col-md-3 col-sm-12">
+                        <h3>Thumbnails title</h3>
+                        <p>Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a pellentesque dui, non
+                            felis. Maecenas malesuada elit lectus felis, malesuada ultricies curabitur et ligula
+                            utorus.</p>
+                        <p>Maecenas malesuada elit lectus felison, malesuada ultricies curabitur et ligula ute
+                            molestie.</p>
+                        <p>
+                            <strong>
+                                <a href="index.html"
+                                   onclick="gtmStorage.push(this)"
+                                   data-gtm='{"event":"linkClick", "data":{"element":"Thumbnails Section Link"}}'
+                                >
+                                    Link text &raquo;
+                                </a>
+                            </strong>
+                        </p>
+                    </div><!-- /.col-md-3.col-sm-12 -->
+
+                    <div class="col-md-3 col-sm-4">
+                        <article class="thumbnail">
+                            <img src="http://placehold.it/253x120" alt="alternative image text">
+                            <div class="caption">
+                                <h4>Thumbnail label</h4>
+                                <p>Curabitur et ligula. Ut molest porta urna ultricies porta urna. Vestibulum commodo
+                                    volutpat convallis enim.</p>
+                                <p>
+                                    <a href="#"
+                                       class="btn btn-primary"
+                                       role="button"
+                                       onclick="gtmStorage.push(this)"
+                                       data-gtm='{"event":"thumbnailClick", "data":{"element":"Buy Btn", "order":1}}'
+                                    >
+                                        Buy it
+                                    </a>
+                                    <a href="index.html"
+                                       class="btn btn-default"
+                                       role="button"
+                                       onclick="gtmStorage.push(this)"
+                                       data-gtm='{"event":"thumbnailClick", "data":{"element":"Details Link", "order":1}}'
+                                    >
+                                        Show details
+                                    </a>
+                                </p>
+                            </div><!-- /.caption -->
+                        </article><!-- /.thumbnail -->
+                    </div><!-- /.col-md-3.col-sm-4 -->
+
+                    <div class="col-md-3 col-sm-4">
+                        <article class="thumbnail">
+                            <img src="http://placehold.it/253x120" alt="alternative image text">
+                            <div class="caption">
+                                <h4>Thumbnail label</h4>
+                                <p>Curabitur et ligula. Ut molest porta urna ultricies porta urna. Vestibulum commodo
+                                    volutpat convallis enim.</p>
+                                <p>
+                                    <a href="#"
+                                       class="btn btn-primary"
+                                       role="button"
+                                       onclick="gtmStorage.push(this)"
+                                       data-gtm='{"event":"thumbnailClick", "data":{"element":"Buy Btn", "order":2}}'
+                                    >
+                                        Buy it
+                                    </a>
+                                    <a href="index.html"
+                                       class="btn btn-default"
+                                       role="button"
+                                       onclick="gtmStorage.push(this)"
+                                       data-gtm='{"event":"thumbnailClick", "data":{"element":"Details Link", "order":2}}'
+                                    >
+                                        Show details
+                                    </a>
+                                </p>
+                            </div><!-- /.caption -->
+                        </article><!-- /.thumbnail -->
+                    </div><!-- /.col-md-3.col-sm-4 -->
+
+                    <div class="col-md-3 col-sm-4">
+                        <article class="thumbnail">
+                            <img src="http://placehold.it/253x120" alt="alternative image text">
+                            <div class="caption">
+                                <h4>Thumbnail label</h4>
+                                <p>Curabitur et ligula. Ut molest porta urna ultricies porta urna. Vestibulum commodo
+                                    volutpat convallis enim.</p>
+                                <p>
+                                    <a href="#"
+                                       class="btn btn-primary"
+                                       role="button"
+                                       onclick="gtmStorage.push(this)"
+                                       data-gtm='{"event":"thumbnailClick", "data":{"element":"Buy Btn", "order":3}}'
+                                    >
+                                        Buy it
+                                    </a>
+                                    <a href="index.html"
+                                       class="btn btn-default"
+                                       role="button"
+                                       onclick="gtmStorage.push(this)"
+                                       data-gtm='{"event":"thumbnailClick", "data":{"element":"Details Link", "order":3}}'
+                                    >
+                                        Show details
+                                    </a>
+                                </p>
+                            </div><!-- /.caption -->
+                        </article><!-- /.thumbnail -->
+                    </div><!-- /.col-md-3.col-sm-4 -->
+                </div><!-- /.row -->
+            </section><!-- /.content-section -->
+
+            <section class="content-section section-gray" style="background:#efefef">
+                <div class="actionbox" style="display: table; width: 100%; ">
+                    <div>
+                        <h2>Call to action box title</h2>
+                        <p class="lead">Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a pellentesque
+                            dui, non
+                            felis.</p>
+                    </div>
+                    <div class="actionbox-button"
+                         style="display: table-cell; vertical-align: middle; padding-left: 30px; ">
+                        <a href="index.html"
+                           class="btn btn-primary btn-lg"
+                           onclick="gtmStorage.push(this)" data-gtm='{"event":"ctaClick", "data":{"element":"button"}}'
+                        >
+                            Button text
+                        </a>
+                    </div>
+                </div><!-- /.actionbox -->
+            </section><!-- /.content-section -->
+
+            <section class="content-section">
+                <h2 class="sr-only">Section name</h2>
+                <div class="row">
+                    <div class="col-md-6 col-sm-12">
+                        <article class="company">
+                            <h3>Box title</h3>
+                            <p>Curabitur et ligula. Ut molestie a, ultricies porta urna. Vestibulum commodo volutpat a,
+                                convallis ac, laoreet enim. Phasellus fermentum in, dolor. Pellentesque facilisis. Nulla
+                                imperdiet sit amet magna. Vestibulum dapibus, mauris nec malesuada fames ac turpis
+                                velit,
+                                rhoncus eu, luctus et interdum adipiscing wisi. Aliquam erat ac ipsum. Integer aliquam
+                                purus. Quisque lorem tortor fringilla sed, vestibulum id, eleifend justo.</p>
+                            <p>Vel bibendum sapien massa ac turpis faucibus orci luctus non, consectetuer lobortis quis,
+                                varius in, purus. Integer ultrices posuere cubilia Curae, Nulla ipsum dolor lacus,
+                                suscipit
+                                adipiscing. Cum sociis natoque penatibus et ultrices volutpat.</p>
+                            <p>Pellentesque facilisis. Nulla imperdiet sit amet magna. Vestibulum dapibus, mauris nec
+                                malesuada fames ac turpis velit, rhoncus eu, luctus et interdum adipiscing wisi.</p>
+                            <p>
+                                <strong>
+                                    <a href="index.html"
+                                       onclick="gtmStorage.push(this)"
+                                       data-gtm='{"event":"boxLinkClick", "data":{"element":"Box section Link"}}'
+                                    >
+                                        Link text &raquo;
+                                    </a>
+                                </strong>
+                            </p>
+                        </article>
+                    </div><!-- /.col-md-6.col-sm-12 -->
+
+                    <div class="col-md-3 col-sm-6">
+                        <article class="best">
+                            <h3>Collapse area</h3>
+                            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading" role="tab" id="headingOne">
+                                        <h4 class="panel-title">
+                                            <a href="#collapseOne"
+                                               role="button"
+                                               data-toggle="collapse" data-parent="#accordion"
+                                               aria-expanded="true" aria-controls="collapseOne"
+                                               onclick="gtmStorage.push(this)"
+                                               data-gtm='{"event":"collapse", "data":{"element":"title", "order":1}}'
+                                            >
+                                                Collapsible Group #1
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel"
+                                         aria-labelledby="headingOne">
+                                        <div class="panel-body">
+                                            Curabitur et ligula. Ut molestie a, ultricies porta urna. Vestibulum commodo
+                                            volutpat a, convallis ac, laoreet enim. Phasellus fermentum in, dolor
+                                            facilisis.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading" role="tab" id="headingTwo">
+                                        <h4 class="panel-title">
+                                            <a href="#collapseTwo"
+                                               class="collapsed"
+                                               role="button"
+                                               data-toggle="collapse" data-parent="#accordion"
+                                               aria-expanded="false" aria-controls="collapseTwo"
+                                               onclick="gtmStorage.push(this)"
+                                               data-gtm='{"event":"collapse", "data":{"element":"title", "order":2}}'
+                                            >
+                                                Collapsible Group #2
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel"
+                                         aria-labelledby="headingTwo">
+                                        <div class="panel-body">
+                                            Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a
+                                            pellentesque dui, non felis. Maecenas malesuada elit lectus felis, malesuada
+                                            ultricies.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading" role="tab" id="headingThree">
+                                        <h4 class="panel-title">
+                                            <a href="#collapseThree"
+                                               class="collapsed"
+                                               role="button"
+                                               data-toggle="collapse" data-parent="#accordion"
+                                               aria-expanded="false" aria-controls="collapseThree"
+                                               onclick="gtmStorage.push(this)"
+                                               data-gtm='{"event":"collapse", "data":{"element":"title", "order":3}}'
+                                            >
+                                                Collapsible Group #3
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel"
+                                         aria-labelledby="headingThree">
+                                        <div class="panel-body">
+                                            Nulla imperdiet sit amet magna. Vestibulum dapibus, mauris nec malesuada
+                                            fames ac turpis velit, rhoncus eu, luctus et interdum adipiscing wiside.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </div><!-- /.col-md-3.col-sm-6 -->
+
+                    <div class="col-md-3 col-sm-6">
+                        <h3>Form title</h3>
+                        <p>Maecenas sit amet tincidunt elit lorem.</p>
+
+                        <form action="index.html"
+                              onsubmit="gtmStorage.push(this)" data-gtm='{"event":"formSubmit", "data":{"name":"Form title"}}'>
+                            <div class="form-group">
+                                <label for="inputEmail">Email address</label>
+                                <input type="email" class="form-control" id="inputEmail" placeholder="Your email">
+                            </div>
+                            <div class="form-group">
+                                <label for="textareaMsg">Message</label>
+                                <textarea class="form-control" rows="2" id="textareaMsg"
+                                          placeholder="Your message..."></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-default">Submit</button>
+                        </form>
+                    </div><!-- /.col-md-3.col-sm-6 -->
+                </div><!-- /.row -->
+            </section><!-- /.content-section -->
+        </main><!-- /.main -->
+    </div>
+</div>
+
+<footer class="content-info">
+    <div class="container">
+        <hr>
+        <p><small>&copy; Marcin 2017</small></p>
+    </div>
+</footer>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+<script src="../src/script.js"></script>
+</body>
+</html>
