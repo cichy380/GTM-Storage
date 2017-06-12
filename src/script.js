@@ -58,5 +58,11 @@
     }
 
     // checking new data in GTM-Storage every 1.5 sec.
-	setInterval(sendGtmStorage, 1500);
+    var intervalId = setInterval(sendGtmStorage, 1500);
+
+    // stop interval action (sending data) after clicking any link on page
+    $(window).on('beforeunload', function () {
+        clearInterval(intervalId);
+    });
+
 })(jQuery);
