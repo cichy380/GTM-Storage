@@ -7,7 +7,7 @@
  *
  * @todo Enhanced Ecommerce handling
  */
-;(function($, undefined) {
+;(function($, dataLayer, gtmStorage, window, undefined) {
     'use strict';
 
     /**
@@ -25,7 +25,7 @@
         }
 
         gtmData = gtmStorage.getItems();
-        gtmData.forEach(function (item, index) {
+        gtmData.forEach(function (item) {
             var data2send = {};
 
             if (item.sending === false) { // data item not sending yet
@@ -65,4 +65,4 @@
         clearInterval(intervalId);
     });
 
-})(jQuery);
+})(jQuery, dataLayer, gtmStorage, window);
