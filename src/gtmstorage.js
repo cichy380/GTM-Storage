@@ -99,10 +99,15 @@ var gtmStorage = (function() {
 
         /**
          * Adds element to storage.
-         * @param {HTML DOM element} element
+         * @param {HTMLAnchorElement | Object} param
          */
-        push = function (element) {
-            var gtmLocalStorage;
+        push = function (param) {
+            var gtmLocalStorage,
+                data = {
+                    id: Math.random(),
+                    time: new Date(),
+                    sending: false, // FALSE == item did not send yet,  TRUE == just sending
+                };
 
             if (typeof localStorage !== 'object' || typeof JSON !== 'object') {
                 // browser does not support required function
@@ -117,16 +122,23 @@ var gtmStorage = (function() {
                 localStorage.removeItem(namespace);
                 gtmLocalStorage = [];
 
-                window.console && console.error(errMsg);
+                window.console && console.warn(errMsg);
             }
 
-            // push new data (new element)
-            gtmLocalStorage.push({
-                id: Math.random(),
-                time: new Date(),
-                element: element.outerHTML,
-                sending: false, // FALSE == item did not send yet,  TRUE == just sending
-            });
+            // got HTML DOM element
+            if (Object.prototype.toString.call(param) === '[object HTMLAnchorElement]') {
+                data.element = param.outerHTML;
+            }
+            // got ready data
+            else if (Object.prototype.toString.call(param) === '[object Object]') {
+                data.data = param;
+            }
+            else {
+                throw 'Incorrect data';
+            }
+
+            // push new data (new element or ready JSON data)
+            gtmLocalStorage.push(data);
 
             // save
             _saveGtmStorage(gtmLocalStorage);
@@ -147,7 +159,7 @@ var gtmStorage = (function() {
         /**
          * Returns easy readable descrition of HTML element.
          * Eg. "<a.btn.btn-submit>"
-         * @param {HTML DOM element} element
+         * @param {HTMLAnchorElement} element
          * @return {string}
          */
         getElementName = function (element) {
