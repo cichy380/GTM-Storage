@@ -11,20 +11,20 @@
     'use strict';
 
     /**
+     * Error logger
+     */
+    function logError(message) {
+        if (window.console && typeof window.console.warn === 'function') {
+            console.warn('GTM: ' + message);
+        }
+    }
+
+    /**
      * Read Storage data and send it to GTM
      */
     function sendGtmStorage() {
-        var gtmData;
+        var gtmData = gtmStorage.getItems();
 
-        if (typeof gtmStorage !== 'object') {
-            $.error('Required object GTM Storage (gtmStorage) missing.');
-        }
-
-        if (typeof dataLayer !== 'object') {
-            $.error('Required object GTM (dataLayer) missing.');
-        }
-
-        gtmData = gtmStorage.getItems();
         gtmData.forEach(function (item) {
             var data2send = {};
 
@@ -50,8 +50,8 @@
                 else {
                     // item data is invalid - remove it
                     gtmStorage.removeItem(item.id);
-                    window.console && console.error('HTML tag ' + gtmStorage.getElementName($(item.element).get(0)) +
-                        ' does not have required data-gtm attribute or this attribute has wrong data format.');
+                    logError('HTML tag ' + gtmStorage.getElementName($(item.element).get(0)) + ' does not have ' +
+                        'required data-gtm attribute or this attribute has wrong data format.');
                 }
             }
         });
