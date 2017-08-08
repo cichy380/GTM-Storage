@@ -26,9 +26,11 @@
         var gtmData = gtmStorage.getItems();
 
         gtmData.forEach(function (item) {
-            var data2send = {};
+            var data2send;
 
             if (item.sending === false) { // data item not sending yet
+
+                // read data from element (from data-* attribute)
                 data2send = $(item.element).data(gtmStorage.namespace);
 
                 // check if required object and property exists
@@ -59,6 +61,16 @@
 
     // checking new data in GTM-Storage every 1.5 sec.
     var intervalId = setInterval(sendGtmStorage, 1500);
+
+    // click event listener on class
+    $('.gtm-click').on('click', function () {
+        try {
+            gtmStorage.push(this);
+        }
+        catch (errorMsg) {
+            logError(errorMsg);
+        }
+    });
 
     // stop interval action (sending data) after clicking any link on page
     $(window).on('beforeunload', function () {
