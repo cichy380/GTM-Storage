@@ -64,12 +64,7 @@
 
     // click event listener on class
     $('.gtm-click').on('click', function () {
-        try {
-            gtmStorage.push(this);
-        }
-        catch (errorMsg) {
-            logError(errorMsg);
-        }
+        gtmStorage.push(this);
     });
 
     // stop interval action (sending data) after clicking any link on page

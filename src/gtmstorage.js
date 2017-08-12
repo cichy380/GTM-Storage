@@ -3,7 +3,7 @@
  *
  * Using HTML5 Local Storage creates numerous stack elements which the event was made on.
  *
- * @version 0.0.1
+ * @version 0.0.3
  * @link https://github.com/cichy380/GTM-Storage
  * @author Marcin Dobroszek
  * @license The MIT License (MIT)
@@ -125,19 +125,20 @@ var gtmStorage = (function() {
                 window.console && console.warn(errMsg);
             }
 
-            // got HTML DOM element
-            if (Object.prototype.toString.call(param) === '[object HTMLAnchorElement]') {
-                data.element = param.outerHTML;
-            }
-            // got ready data
-            else if (Object.prototype.toString.call(param) === '[object Object]') {
+            // got Plain Object means "ready to send" data
+            if (Object.prototype.toString.call(param) === '[object Object]') {
                 data.data = param;
             }
+            // got HTML DOM Element Object
+            else if (param.outerHTML) {
+                data.element = param.outerHTML;
+            }
             else {
-                throw 'Incorrect data';
+                window.console && console.warn('Incorrect input data');
+                return;
             }
 
-            // push new data (new element or ready JSON data)
+            // push new data
             gtmLocalStorage.push(data);
 
             // save
