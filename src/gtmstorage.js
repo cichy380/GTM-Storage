@@ -17,7 +17,7 @@ var gtmStorage = (function() {
 
         /**
          * Returns all data about storaged events.
-         * @return {object} data - List of events
+         * @return {Object} data - List of events
          */
         getItems = function () {
             var localStorageValue = typeof localStorage.getItem(namespace) !== 'undefined'
@@ -28,7 +28,7 @@ var gtmStorage = (function() {
 
         /**
          * Saves new data in storage.
-         * @param {array} data - List of events
+         * @param {Array} data - List of events
          */
         _saveGtmStorage = function (data) {
             // if GTM Storage is not lock we can save new data (add new event) ..
@@ -49,8 +49,8 @@ var gtmStorage = (function() {
 
         /**
          * Changes item data in storage.
-         * @param {array} data - New data of item event
-         * @param {int} id - ID of item event to edit
+         * @param {Array} data - New data of item event
+         * @param {number} id - ID of item event to edit
          */
         editItem = function (data, id) {
             var currentGtmStorage,
@@ -99,7 +99,7 @@ var gtmStorage = (function() {
 
         /**
          * Adds element to storage.
-         * @param {HTMLAnchorElement | Object} param
+         * @param {Object} param - HTML DOM Element Object or Plain Object with "ready to send" data
          */
         push = function (param) {
             var gtmLocalStorage,
@@ -160,7 +160,7 @@ var gtmStorage = (function() {
         /**
          * Returns easy readable descrition of HTML element.
          * Eg. "<a.btn.btn-submit>"
-         * @param {HTMLAnchorElement} element
+         * @param {Object} element - HTML Element Object
          * @return {string}
          */
         getElementName = function (element) {
