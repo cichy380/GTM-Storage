@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8">
+    <title>Silver Context Menu</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="//code.jquery.com/qunit/qunit-2.4.0.css">
+
+    <script> var dataLayer = []; // imitation of GTM dataLayer object </script>
+    <script src="../src/gtmstorage.js"></script>
+
+    <style>
+        .dropdown-menu {display: none; }
+    </style>
+</head>
+<body>
+    <div id="qunit"></div>
+
+    <a href="#"
+       id="btn1-nodata"
+       onclick="gtmStorage.push(this)"
+    ></a>
+
+    <a href="#"
+       id="btn2-wrongjsondata"
+       onclick="gtmStorage.push(this)"
+       data-gtm='{"event":"linkClick", "data":{"element":"anchor"}'
+    ></a>
+
+    <a href="#"
+       id="btn3-jsondata"
+       onclick="gtmStorage.push(this)"
+       data-gtm='{"event":"linkClick", "data":{"element":"anchor", "order":1}}'
+    ></a>
+
+    <a href="#"
+       id="btn4-jsondata"
+       onclick="gtmStorage.push(this)"
+       data-gtm='{"event":"linkClick", "data":{"element":"anchor", "order":2}}'
+    ></a>
+
+    <a href="#"
+       id="btn5-jsondata"
+       onclick="gtmStorage.push(this)"
+       data-gtm='{"event":"linkClick", "data":{"element":"anchor", "order":3}}'
+    ></a>
+
+    <a href="#"
+       id="btn6-jsondata"
+       class="gtm-click"
+       data-gtm='{"event":"linkClick", "data":{"element":"anchor", "order":4}}'
+    ></a>
+
+    <script src="//code.jquery.com/jquery-1.12.4.min.js"
+            integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+            crossorigin="anonymous"></script>
+    <script src="//code.jquery.com/qunit/qunit-2.4.0.js"></script>
+    <script src="test.js"></script>
+    <script src="../src/script.js"></script>
+</body>
+</html>
